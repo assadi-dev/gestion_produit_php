@@ -1,5 +1,6 @@
 <?php
 
+
 class Home extends Controller {
 
     
@@ -7,6 +8,8 @@ class Home extends Controller {
     public function index() {
 
         $this->loadModel("ProductModel");
-        echo "accueil";
+       $products = $this->ProductModel->findAll();
+       var_dump($products);
+        echo "Produits";
     }
 }
