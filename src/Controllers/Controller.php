@@ -1,15 +1,18 @@
 <?php
 
 
+
+use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 abstract class Controller{
     
     private $loader;
-    protected $twig;
+    protected $view;
 
     public function __construct(){
-       // $this->loader = new FilesystemLoader();
+        $this->loader = new FilesystemLoader(ROOT.'src/Views');
+        $this->view = new Environment($this->loader);
     }
     
     public function loadModel(string $model){

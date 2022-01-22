@@ -4,6 +4,7 @@
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 
 /**Models */
+require_once(ROOT.'/vendor/autoload.php');
 require_once(ROOT.'src/Models/Model.php');
 require_once(ROOT.'src/Controllers/Controller.php');
 
@@ -28,8 +29,8 @@ if($params[0] !== ""){
    
 }else{
 
-    /*require_once(ROOT.'controllers/Main.php');
+    require_once(ROOT.'src/Controllers/MainController.php');
     $controller = new Main();
-    $controller->index();*/
+    $controller->index();
 
 }
